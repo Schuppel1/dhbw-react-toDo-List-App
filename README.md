@@ -13,5 +13,5 @@ and Paul
 npx create-react-app
 
 # to start the app use
-cd dhbw-todo
+cd dhbw-todo  
 yarn start
