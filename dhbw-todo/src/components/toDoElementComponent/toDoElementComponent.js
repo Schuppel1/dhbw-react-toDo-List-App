@@ -1,10 +1,16 @@
-import React from "react";
+import React, {Fragment} from "react";
 
-export const ToDoElementComponent = () => {
+export const ToDoElementComponent = ({Aufgabe}) => {
+
+    let toDo = Aufgabe;
+
+    function editAufgabe(e) {
+        toDo = "nop";
+    }
 
     return <div className="ToDoElementComponentWrapper">
-        <p>Hier könnte die Aufgabe stehen</p>
-        <button class="welcomeComponentButton" onClick>edit</button>
-        <button class="welcomeComponentButton" onClick>delete</button>
+        <p>{toDo}</p>
+        <button className="welcomeComponentButton" onClick={editAufgabe}>edit</button>
+        <button className="welcomeComponentButton">delete</button>
     </div>
 };
