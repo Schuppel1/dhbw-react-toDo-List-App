@@ -12,5 +12,6 @@ and Paul
 # this app os based on
 npx create-react-app
 
-# to start the app use 
+# to start the app use
+cd dhbw-todo
 yarn start
