@@ -27,9 +27,4 @@ export const WelcomeComponent = ({src, alt, team}) => {
     } else {
         return appMessage; 
     }
-
-    
-
-
-    
 };
