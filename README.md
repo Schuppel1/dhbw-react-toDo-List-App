@@ -9,7 +9,7 @@ Arthur,
 Chris,  
 and Paul  
 
-# this app os based on
+# this app is based on
 npx create-react-app
 
 # to start the app use
