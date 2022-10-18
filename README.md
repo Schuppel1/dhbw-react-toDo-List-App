@@ -4,10 +4,10 @@ A Projekt from DHBW OnlineMedien2022.
 A react app who helps you to generate a simple toDo list
 
 With Help from
-Philipp, 
-Arthur, 
-Chris, 
-and Paul
+Philipp,  
+Arthur,  
+Chris,  
+and Paul  
 
 # this app os based on
 npx create-react-app
