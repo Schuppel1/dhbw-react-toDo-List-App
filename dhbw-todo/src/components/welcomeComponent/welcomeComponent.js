@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import "./welcomeComponent.css";
 
-let isVisible = true;
 
-export const WelcomeComponent = ({src, alt, team, toDoPage}) => {
+export const WelcomeComponent = ({src, alt, team, visibility}) => {
     
-    const [internalVisibility, setVisibility] = useState(isVisible);
+    const [internalVisibility, setVisibility] = useState(visibility);
+
 
     const welcomeMessage =<div class="welcomeScreen"> 
         <h1 id="welcomeHeader">Willkommen im der DHBW ToDo List Generator </h1>
@@ -14,18 +14,16 @@ export const WelcomeComponent = ({src, alt, team, toDoPage}) => {
         <button class="welcomeComponentButton" onClick={versteckeKomponente}>Zur Liste!</button>
     </div>
 
-    const appMessage = <div>
-        <p>trolololol</p>
-    </div>  
-
 
     function versteckeKomponente() {
         setVisibility(false);
     }
 
+
+
     if(internalVisibility) {
         return welcomeMessage;
     } else {
-        return toDoPage; 
+        return ; 
     }
 };
