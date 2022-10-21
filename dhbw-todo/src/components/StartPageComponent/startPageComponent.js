@@ -4,8 +4,7 @@ import footer_logo from '../../footer_logo_weiß.png';
 import logoHomeButton from '../../house-chimney-solid.svg'
 import { WelcomeComponent } from "../welcomeComponent/welcomeComponent";
 import { FooterComponent } from "../footerComponent/footerComponent";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouseChimney } from '@fortawesome/free-solid-svg-icons'
+import "./startPageComponent.css"
 
 export const StartPageComponent = () => {
 
@@ -22,8 +21,8 @@ export const StartPageComponent = () => {
     </>;
 
     const listActive = <>
-        <div>
-            <img src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen} width="50px" height="50px"></img>
+        <div className="listWrapper">
+            <img src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
         </div>
         <p>Hier kommt die Liste hin</p>
         <FooterComponent src={footer_logo} alt={"DHBW Logo"}/>
