@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./welcomeComponent.css";
 
 let isVisible = true;
 
@@ -6,11 +7,11 @@ export const WelcomeComponent = ({src, alt, team, toDoPage}) => {
     
     const [internalVisibility, setVisibility] = useState(isVisible);
 
-    const welcomeMessage =<div>
-        <h1>Herzlich willkommen zur ToDo-Liste! </h1>
-        <img src={src} alt={alt}/>
-        <p>Dieses Projekt wurde von {team} erstellt</p>
-        <button className="welcomeComponentButton" onClick={versteckeKomponente}>Los geht!!!</button>
+    const welcomeMessage =<div class="welcomeScreen"> 
+        <h1 id="welcomeHeader">Willkommen im der DHBW ToDo List Generator </h1>
+        <p id="team">Dieses Projekt wurde von {team} erstellt</p>
+        <img class="logo" src={src} alt={alt}/>
+        <button class="welcomeComponentButton" onClick={versteckeKomponente}>Zur Liste!</button>
     </div>
 
     const appMessage = <div>

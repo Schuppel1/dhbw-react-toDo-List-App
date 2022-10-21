@@ -1,4 +1,4 @@
-import dhbwlogo from '../src/Logo_DHBWMosbach.jpg';
+import logo from './hero_image.svg';
 import './App.css';
 import {WelcomeComponent} from './components/welcomeComponent/welcomeComponent'
 import {ToDoElementComponent} from './components/toDoElementComponent/toDoElementComponent'
@@ -10,7 +10,7 @@ function App() {
   //<ToDoElementComponent Aufgabe={"testadafafga"}/>
   return (
     <div>
-      <WelcomeComponent src={dhbwlogo} alt={"Logo DHBW Mosbach"} team={"Philipp, Arthur, Chris, Sven und Paul"} toDoPage={<StartPageComponent/>}/>
+      <WelcomeComponent src={logo} alt={"Person with a List"} team={"Philipp, Arthur, Chris, Sven und Paul"} toDoPage={<StartPageComponent/>}/>
      
     </div>
   );

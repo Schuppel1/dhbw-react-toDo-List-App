@@ -1,0 +1,41 @@
+.welcomeScreen {
+    padding: 10px;
+    text-align: center;
+    background: #FFFFFF;
+    color: #5d6971;
+    font-size: 30px;
+}
+
+.welcomeComponentButton {
+    display: flex;
+    margin-left: 50%;
+    background-color: #e2001a; 
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    color: #FFFFFF;
+}
+
+.welcomeComponentButton:hover {
+    background-color: #e2001a;
+    opacity: 80%;
+    color: white;
+  }
+
+.logo {
+    width: 30%;
+    padding-bottom: 20px;
+}
+
+#welcomeHeader {
+    font-size: 30px;
+    font-weight: 300;
+    color: #5d6971;
+}
+
+#team {
+    font-size: 15px;
+    font-weight: 200;
+    color: #5d6971;
+    padding-bottom: 10px;
+}
