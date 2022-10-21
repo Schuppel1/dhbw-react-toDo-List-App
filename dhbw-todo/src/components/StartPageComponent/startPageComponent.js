@@ -22,7 +22,7 @@ export const StartPageComponent = () => {
 
     const listActive = <>
         <div className="listWrapper">
-            <img src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
+            <img className="homeButton" src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
         </div>
         <p>Hier kommt die Liste hin</p>
         <FooterComponent src={footer_logo} alt={"DHBW Logo"}/>
