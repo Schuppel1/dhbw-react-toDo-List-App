@@ -9,7 +9,8 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
     const [allValues, setAllValues] = useState({
         isTodo: todo,
         isEditMode: '',
-        isChecked: ''
+        isChecked: '',
+        isVisible: 'true'
      });
     
     // Editiert ein List Item
@@ -17,7 +18,8 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
         setAllValues({
             isTodo: allValues.isTodo,
             isEditMode: false,
-            isChecked: allValues.isChecked
+            isChecked: allValues.isChecked,
+            isVisible: allValues.isVisible
         })
     }
 
@@ -26,7 +28,8 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
         setAllValues({
             isTodo: allValues.isTodo,
             isEditMode: !allValues.isEditMode,
-            isChecked: allValues.isChecked
+            isChecked: allValues.isChecked,
+            isVisible: allValues.isVisible
         })
     }
 
@@ -35,7 +38,8 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
         setAllValues({
             isTodo: event.target.value,
             isEditMode: allValues.isEditMode,
-            isChecked: allValues.isChecked
+            isChecked: allValues.isChecked,
+            isVisible: allValues.isVisible
         })
    }
 
@@ -45,19 +49,27 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
             setAllValues({
                 isTodo: allValues.isTodo,
                 isEditMode: allValues.isEditMode,
-                isChecked: false
+                isChecked: false,
+                isVisible: allValues.isVisible
             })
         } else {
             setAllValues({
                 isTodo: allValues.isTodo,
                 isEditMode: allValues.isEditMode,
-                isChecked: true
+                isChecked: true,
+                isVisible: allValues.isVisible
             })
         }
    }
 
    function onDelete() {
-    deletefunction(allValues.isTodo)
+    setAllValues({
+        isTodo: allValues.isTodo,
+        isEditMode: allValues.isEditMode,
+        isChecked: true,
+        isVisible: false
+    })
+    deletefunction()
    }
 
    function getInfos() {
@@ -72,6 +84,11 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
         checkboxHtmlElement =  <input type="checkbox" className="checkboxToDo" name="checkboxToDo" onChange={checkBoxChanged} checked/>
     }
     
+    if(!allValues.isVisible) {
+        return;
+    }
+
+
     // Return HTML String
     let returnHTML =     <>
         <li key={keyValue}>

@@ -16,27 +16,25 @@ export const ListComponent = ({list}) => {
     let keycount = 0;
     if(isList) {
         listItems = isList.map((item) => 
-            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} deletefunction={deletListItem}/>
+            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} deletefunction={checkForVisibleItems} />
         );
     }
 
-    // löscht ein einzelnes Element der ToDo Liste
-    function deletListItem(itemContent) {
-        console.log(isList)
-        const arrayIndex = (isList.indexOf(itemContent));
-        console.log("ArrayIndex")
-        console.log(arrayIndex)
-        setList(isList.splice(arrayIndex,1))
-        console.log(isList)
-
-    }
 
     // Löscht die ganze Liste
     function clearList() {
         listItems = <p>
             Es ist noch keine Liste vorhanden
         </p>
+        keycount = 0
         setList()
+    }
+
+    // Prüft ob nur noch 1 Item vorhanden ist. Falls ja wird diese function beim löschen dieses Item aufgerufen
+    function checkForVisibleItems() {
+        if(document.getElementById("toDoList").childElementCount==1) {
+            clearList() 
+        }
     }
 
     // Fügt ein Element der Liste hinzu
@@ -51,7 +49,7 @@ export const ListComponent = ({list}) => {
         a.value=""
     }
 
-    console.log(isList)
+   
     return ( 
     <div className="listToDo"> 
 
@@ -61,7 +59,7 @@ export const ListComponent = ({list}) => {
         </div>
 
         <div className="listItemsToDo">
-                <ul>
+                <ul id="toDoList">
                     {listItems}
                 </ul>
 
