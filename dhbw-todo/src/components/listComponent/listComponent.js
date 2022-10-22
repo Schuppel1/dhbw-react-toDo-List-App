@@ -24,7 +24,7 @@ export const ListComponent = ({list}) => {
     // Löscht die ganze Liste
     function clearList() {
         listItems = <p>
-            Es ist noch keine Liste vorhanden
+            Es ist noch keine Liste vorhanden.
         </p>
         keycount = 0
         setList()
@@ -80,14 +80,16 @@ export const ListComponent = ({list}) => {
               <input type="text" name="inputToDo" id="inputToDo" placeholder="To-Do hinzufügen.." />
               <button className="addButton" onClick={addListItem}>Hinzufügen</button>
         </div>
+        <hr />
 
         <div className="listItemsToDo">
                 <ul id="toDoList">
                     {listItems}
                 </ul>
+                <hr />        
 
         <div className='resetToDo' onClick={clearList}>
-            Aufgaben zurücksetzen
+            Alle Aufgaben zurücksetzen!
         </div>
     </div>
 

@@ -2,20 +2,15 @@
     display: grid;
     justify-content: center;
     align-items: center;
+
 }
 
 .container {
     max-width: 100%;
     display: block;
     position: relative;
-    padding-left: 35px;
     margin-bottom: 12px;
-    cursor: pointer;
     font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
 .checkboxToDo {
@@ -40,10 +35,11 @@
     margin-right: 10px;
     background-color:#FFFFFF;
     border: 2px solid;
-    border-color: #e2001a;
+    border-color: #5d6971;
     padding: 12px;
     border-radius: 12px;
     color: black;
+    cursor: pointer;
     }
 
 
@@ -64,6 +60,7 @@ border: none;
 padding: 12px;
 border-radius: 12px;
 color: #FFFFFF;
+cursor: pointer;
 }
 
 .editButton {
@@ -76,6 +73,7 @@ color: #FFFFFF;
     padding: 12px;
     border-radius: 12px;
     color: black;
+    cursor: pointer;
     }
 
 .checkboxToDo {
@@ -84,11 +82,20 @@ color: #FFFFFF;
         left: 0;
         height: 25px;
         width: 25px;
+        cursor: pointer;
 }
 
 .container input:checked ~ .checkboxToDo {
     background-color: #e2001a;
   }
+
+.resetToDo {
+    color: #5d6971;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: underline;
+}  
 
 input[type=text] {
     display: flex;
@@ -97,3 +104,17 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
   }  
+
+hr {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+
+p {
+    color: #5d6971;
+    text-align: center;
+    text-transform: uppercase;
+}    
