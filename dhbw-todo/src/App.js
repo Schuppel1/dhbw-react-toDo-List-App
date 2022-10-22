@@ -1,10 +1,8 @@
 import './App.css';
-import {StartPageComponent} from './components/StartPageComponent/startPageComponent'
+import {StartPageComponent} from './components/startPageComponent/startPageComponent'
 
 function App() {
-  //<ToDoElementComponent Aufgabe={"testadafafga"}/>
 
-  //<ToDoElementComponent Aufgabe={"testadafafga"}/>
   return (
     <div>
       <StartPageComponent></StartPageComponent>

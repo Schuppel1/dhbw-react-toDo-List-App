@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./footerComponent.css";
 
 export const FooterComponent = ({src, alt}) => {
