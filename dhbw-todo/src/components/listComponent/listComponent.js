@@ -46,6 +46,11 @@ export const ListComponent = ({list}) => {
             return
         }
 
+        if(a.value.length<1) {
+            alert("leerer Eintrag")
+            return
+        }
+
         if(!isList) {
             setList([a.value])
         } else {
