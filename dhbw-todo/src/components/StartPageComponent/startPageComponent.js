@@ -25,7 +25,6 @@ export const StartPageComponent = () => {
         <div className="listWrapper">
             <img className="homeButton" src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
         </div>
-        <p>Hier kommt die Liste hin</p>
         <ListComponent  list={["Hund füttern", "tes1"]}  />
         <FooterComponent src={footer_logo} alt={"DHBW Logo"}/>
     </>;

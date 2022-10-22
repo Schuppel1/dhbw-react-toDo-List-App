@@ -1,4 +1,5 @@
 import React from "react";
+import "./listComponent.css";
 
 //Es wird ein Array übergeben mit der Liste
 export const ListComponent = ({list}) => {
@@ -13,15 +14,14 @@ export const ListComponent = ({list}) => {
     if(list) {
         listItems = list.map((item) => 
             <li key={keycount++}>
-                <div className="todo-name">
-                    <input type="checkbox" className="todo--check" name="todo--check" onClick={markAsDone} />
+                <div className="container">
+                    <input type="checkbox" className="checkboxToDo" name="checkboxToDo" onClick={markAsDone} />
+                    <div className="editToDo" contentEditable="true" onClick={editListItem}>{item}</div>
 
-                    <div className="todo--name" contentEditable="true" onClick={editListItem}>{item}</div>
-                </div>
-
-                <div className="todo-actions">
-                    <div className="todo-edit" onClick={editListItem}>Bearbeiten</div>
-                    <div className="todo-del" onClick={deletListItem}>Löschen</div>
+                    <div className="buttonWrapperToDo">
+                        <button className="editButton" onClick={editListItem}>Bearbeiten</button>
+                        <button className="deleteButton" onClick={deletListItem}>Löschen</button>
+                    </div>
                 </div>
             </li>
          );
@@ -66,19 +66,22 @@ export const ListComponent = ({list}) => {
         console.log(listItems)
     }
 
-    return (
+    return ( <div className="listToDo"> 
 
-        <div className="todo-list">
-                <ul className='todo--list'>
+        <div className='inputToDo'>
+              <input type="text" name="inputToDo" id="inputToDo" placeholder="To-Do hinzufügen.." onKeyPress={keyListener} />
+        </div>
+
+        <div className="listItemsToDo">
+                <ul>
                     {listItems}
                 </ul>
-            <div className='todo--input'>
-              <input type="text" name="todo--input" id="todo--input" placeholder="Aufgabe hinzufügen ..." onKeyPress={keyListener} />
-            </div>
 
-            <div className='todo--reset' onClick={clearList}>
-              Aufgaben zurücksetzen
-            </div>
+        <div className='resetToDo' onClick={clearList}>
+            Aufgaben zurücksetzen
+        </div>
+    </div>
+
     </div>
     )
 

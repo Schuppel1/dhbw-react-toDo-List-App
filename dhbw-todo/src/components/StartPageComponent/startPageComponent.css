@@ -4,6 +4,7 @@
 }
 
 .homeButton {
+    cursor: pointer;
     display: flex;
     border: none;
     padding: 12px;
