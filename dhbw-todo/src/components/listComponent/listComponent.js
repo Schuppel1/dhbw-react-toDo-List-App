@@ -41,6 +41,7 @@ export const ListComponent = ({list}) => {
     function addListItem(e) {
         let a =document.getElementById("inputToDo")
         if(!isList) {
+            // Leere Liste musss nich alles überprüfen daher der Sonderfall
             setList([a.value])
             a.value=""
             return
@@ -57,12 +58,10 @@ export const ListComponent = ({list}) => {
             alert("leerer Eintrag")
             return
         }
-        console.log(isList)
-
-        
         a.value=""
     }
 
+    // Um doppelte Einträge zu erkennen
     function checkForDuplicated(toDoName) {
         const listItems = document.getElementById("toDoList").children;
         const listArray = Array.from(listItems);

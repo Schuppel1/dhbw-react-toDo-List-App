@@ -4,6 +4,8 @@ import "./listComponent.css";
 // Ein Einzelnes Listen Element
 export const ListElementComponent = ({todo,checkForVisibleItems,keyValue,checkDoubleEntry}) => {
 
+    // Bemerkung: checkDoubleEntry wird als Function übergeben, 
+    // da Sie in listComponent ebenfalls gebraucht wurde. Dann muss man es nur einmal coden
 
     // Schaut ob sich der Status verändert hat. 
     const [allValues, setAllValues] = useState({
@@ -67,6 +69,7 @@ export const ListElementComponent = ({todo,checkForVisibleItems,keyValue,checkDo
    }
 
    // Anstatt zu löschen werden die Items nur unsichtbar gemacht.
+   // Erst wenn die Liste keine Sichtbaren Elemente mehr hat/ oder die ganze Liste leer ist, wird es geleert
    function onDelete() {
     setAllValues({
         isTodo: allValues.isTodo,

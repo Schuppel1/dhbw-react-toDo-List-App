@@ -10,12 +10,14 @@ import { ListComponent } from '../listComponent/listComponent'
 
 import "./startPageComponent.css"
 
+// Hier ist die Startseite
 export const StartPageComponent = () => {
 
-    
-
+    // wird benötigt für den Visible State
     const [isWelcomeActive, setVisibility] = useState(true);
-        const welcomeActive =  <>
+    
+    // Hier ist die HTML Komponente welche am Start angezeigt wird. 
+    const welcomeActive =  <>
         <div>
             <WelcomeComponent src={logo} alt={"Person with a List"} team={"Philipp, Arthur, Chris, Sven und Paul"} toogleFunction={toggleScreen}/>
         </div>
@@ -24,6 +26,8 @@ export const StartPageComponent = () => {
         </div>
     </>;
 
+    // Hier ist die HTML Komponente welche die Listenseite anzeigt. Beim Wechsel hin und her wird der Zusstand vergessen
+    // Das wurde so beabsichtigt. Es wird keine persistente Speicherung gewünscht. (LocalStore. Cookies etc. )
     const listActive = <>
         <div className="listWrapper">
             <img className="homeButton" src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
@@ -32,6 +36,7 @@ export const StartPageComponent = () => {
        
     </>;
 
+    // wechselt zwischen Wilkommenseite und Listenseite.
     function toggleScreen () {
         setVisibility(!isWelcomeActive);
 

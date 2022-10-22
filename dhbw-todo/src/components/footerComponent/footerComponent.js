@@ -3,10 +3,12 @@ import "./footerComponent.css";
 
 export const FooterComponent = ({src, alt}) => {
 
-return <>
-<div className="footer">
-<img className="footerImg" src={src} alt={alt}/>
-  </div>
-</>
+
+  //ein einfacher Footer
+  return <>
+    <div className="footer">
+      <img className="footerImg" src={src} alt={alt}/>
+    </div>
+  </>
 
 }
