@@ -16,7 +16,7 @@ export const ListComponent = ({list}) => {
     let keycount = 0;
     if(isList) {
         listItems = isList.map((item) => 
-            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} deletefunction={checkForVisibleItems} />
+            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} deletefunction={checkForVisibleItems} checkDoubleEntry={checkForDuplicated}/>
         );
     }
 

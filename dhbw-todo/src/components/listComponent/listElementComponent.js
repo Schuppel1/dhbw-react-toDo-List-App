@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./listComponent.css";
 
 // Ein Einzelnes Listen Element
-export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
+export const ListElementComponent = ({todo,deletefunction,keyValue,checkDoubleEntry}) => {
 
 
     // Schaut ob sich der Status verändert hat. 
@@ -15,6 +15,10 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
     
     // Editiert ein List Item
     function editListItem() {
+        if(checkDoubleEntry(allValues.isTodo)) {
+            alert("Ein Eintrag mit diesem Namen existiert bereits")
+            return;
+        }
         setAllValues({
             isTodo: allValues.isTodo,
             isEditMode: false,
