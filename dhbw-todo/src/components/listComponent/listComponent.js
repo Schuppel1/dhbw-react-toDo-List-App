@@ -16,7 +16,7 @@ export const ListComponent = ({list}) => {
     let keycount = 0;
     if(isList) {
         listItems = isList.map((item) => 
-            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} deletefunction={checkForVisibleItems} checkDoubleEntry={checkForDuplicated}/>
+            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} checkForVisibleItems={checkForVisibleItems} checkDoubleEntry={checkForDuplicated}/>
         );
     }
 
@@ -27,7 +27,7 @@ export const ListComponent = ({list}) => {
             Es ist noch keine Liste vorhanden.
         </p>
         keycount = 0
-        setList()
+        setList([])
     }
 
     // Prüft ob nur noch 1 Item vorhanden ist. Falls ja wird diese function beim löschen dieses Item aufgerufen
@@ -40,7 +40,14 @@ export const ListComponent = ({list}) => {
     // Fügt ein Element der Liste hinzu
     function addListItem(e) {
         let a =document.getElementById("inputToDo")
+        if(!isList) {
+            setList([a.value])
+            a.value=""
+            return
+        }
 
+        setList(isList.concat([a.value]))
+        
         if(checkForDuplicated(a.value)) {
             alert("doppelter Eintrag")
             return
@@ -50,12 +57,8 @@ export const ListComponent = ({list}) => {
             alert("leerer Eintrag")
             return
         }
+        console.log(isList)
 
-        if(!isList) {
-            setList([a.value])
-        } else {
-            setList(isList.concat([a.value]))
-        }
         
         a.value=""
     }

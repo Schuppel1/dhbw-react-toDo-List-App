@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./listComponent.css";
 
 // Ein Einzelnes Listen Element
-export const ListElementComponent = ({todo,deletefunction,keyValue,checkDoubleEntry}) => {
+export const ListElementComponent = ({todo,checkForVisibleItems,keyValue,checkDoubleEntry}) => {
 
 
     // Schaut ob sich der Status verändert hat. 
@@ -75,7 +75,7 @@ export const ListElementComponent = ({todo,deletefunction,keyValue,checkDoubleEn
         isVisible: false
     })
     // Funktion der Elternklasse wird aufgerufen. Diese testet ob es noch sichtbare toDos gibt 
-    deletefunction()
+    checkForVisibleItems()
    }
 
 
@@ -115,7 +115,7 @@ export const ListElementComponent = ({todo,deletefunction,keyValue,checkDoubleEn
                 {checkboxHtmlElement}
                 <div className="buttonWrapperToDo">
                     <button className="editButton" onClick={editListItem}>ok</button>
-                    <button className="deleteButton" onClick={deletefunction}>Löschen</button>
+                    <button className="deleteButton" onClick={onDelete}>Löschen</button>
                 </div>
             </div>
         </li>
