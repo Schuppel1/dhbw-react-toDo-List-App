@@ -29,7 +29,7 @@ export const StartPageComponent = () => {
             <img className="homeButton" src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
         </div>
         <ListComponent  list={["Hund füttern", "test1", "test2"]}  />
-        <FooterComponent src={footer_logo} alt={"DHBW Logo"}/>
+       
     </>;
 
     function toggleScreen () {
