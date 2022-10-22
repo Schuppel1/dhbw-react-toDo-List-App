@@ -1,5 +1,6 @@
 import React from "react";
 import "./listComponent.css";
+import { ListElementComponent } from "./listElementComponent";
 
 //Es wird ein Array übergeben mit der Liste
 export const ListComponent = ({list}) => {
@@ -11,22 +12,11 @@ export const ListComponent = ({list}) => {
     </p>
 
     let keycount = 0;
+    //<li key={keycount++}></li>
     if(list) {
         listItems = list.map((item) => 
-            <li key={keycount++}>
-                <div className="container">
-                    <input type="checkbox" className="checkboxToDo" name="checkboxToDo" onClick={markAsDone} />
-                    <div className="editToDo" contentEditable="true" onClick={editListItem}>{item}</div>
-
-                    <div className="buttonWrapperToDo">
-                        <button className="editButton" onClick={editListItem}>Bearbeiten</button>
-                        <button className="deleteButton" onClick={deletListItem}>Löschen</button>
-                    </div>
-                </div>
-            </li>
+        <ListElementComponent todo={item} editmode={false} key={keycount++}></ListElementComponent>
          );
-    } else {
-
     }
 
 

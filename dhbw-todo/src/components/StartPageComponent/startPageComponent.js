@@ -1,10 +1,14 @@
 import React, {useState} from "react";
+
 import logo from '../../hero_image.svg';
 import footer_logo from '../../footer_logo_weiß.png';
 import logoHomeButton from '../../house-chimney-solid.svg'
+
 import { WelcomeComponent } from'../welcomeComponent/welcomeComponent';
 import { FooterComponent } from '../footerComponent/footerComponent';
 import { ListComponent } from '../listComponent/listComponent'
+import { ListElementComponent } from "../listComponent/listElementComponent";
+
 import "./startPageComponent.css"
 
 export const StartPageComponent = () => {
