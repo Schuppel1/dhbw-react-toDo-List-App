@@ -32,7 +32,7 @@ export const ListComponent = ({list}) => {
 
     // Prüft ob nur noch 1 Item vorhanden ist. Falls ja wird diese function beim löschen dieses Item aufgerufen
     function checkForVisibleItems() {
-        if(document.getElementById("toDoList").childElementCount==1) {
+        if(document.getElementById("toDoList").childElementCount===1) {
             clearList() 
         }
     }
@@ -40,6 +40,12 @@ export const ListComponent = ({list}) => {
     // Fügt ein Element der Liste hinzu
     function addListItem(e) {
         let a =document.getElementById("inputToDo")
+
+        if(checkForDuplicated(a.value)) {
+            alert("doppelter Eintrag")
+            return
+        }
+
         if(!isList) {
             setList([a.value])
         } else {
@@ -49,7 +55,19 @@ export const ListComponent = ({list}) => {
         a.value=""
     }
 
-   
+    function checkForDuplicated(toDoName) {
+        const listItems = document.getElementById("toDoList").children;
+        const listArray = Array.from(listItems);
+        let double = false
+        listArray.forEach((item) => {
+            if(item.children.item(0).children.item(0).innerHTML.localeCompare(toDoName)==0) {    
+                double= true
+            } 
+        });
+        return double;
+    }
+
+   // HTML Return 
     return ( 
     <div className="listToDo"> 
 

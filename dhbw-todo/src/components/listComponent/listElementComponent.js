@@ -62,6 +62,7 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
         }
    }
 
+   // Anstatt zu löschen werden die Items nur unsichtbar gemacht.
    function onDelete() {
     setAllValues({
         isTodo: allValues.isTodo,
@@ -69,6 +70,7 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
         isChecked: true,
         isVisible: false
     })
+    // Funktion der Elternklasse wird aufgerufen. Diese testet ob es noch sichtbare toDos gibt 
     deletefunction()
    }
 
