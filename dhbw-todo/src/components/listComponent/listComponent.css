@@ -1,0 +1,120 @@
+.listToDo {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+
+.checkboxToDo {
+    display: block;
+    max-width: 10%;
+    position: relative;
+}  
+
+.editToDo {
+    display: block;
+    position: relative;
+}
+
+.inputToDo {
+    display: block;
+}
+
+.addButton {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color:#FFFFFF;
+    border: 2px solid;
+    border-color: #5d6971;
+    padding: 12px;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    }
+
+
+.buttonWrapperToDo {
+    display: block;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.deleteButton {
+margin-top: 10px;
+margin-bottom: 20px;
+background-color: #e2001a; 
+border: none;
+padding: 12px;
+border-radius: 12px;
+color: #FFFFFF;
+cursor: pointer;
+}
+
+.editButton {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color:#FFFFFF;
+    border: 2px solid;
+    border-color: #e2001a;
+    padding: 12px;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    }
+
+.checkboxToDo {
+        position: absolute;
+        top: 0;
+        margin-left: -50px;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+}
+
+.container input:checked ~ .checkboxToDo {
+    background-color: #e2001a;
+  }
+
+.resetToDo {
+    color: #5d6971;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: underline;
+}  
+
+input[type=text] {
+    display: flex;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }  
+
+hr {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+
+p {
+    color: #5d6971;
+    text-align: center;
+    text-transform: uppercase;
+}    

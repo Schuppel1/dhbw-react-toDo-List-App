@@ -1,0 +1,16 @@
+.listWrapper img{
+    width: 30px;
+    height: 30px;
+}
+
+.homeButton {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    padding: 12px;
+}
+
+.homeButton:hover {
+    opacity: 80%;
+    color: white;
+  }
