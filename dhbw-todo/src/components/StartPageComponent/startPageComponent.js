@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import logo from '../../hero_image.svg';
 import footer_logo from '../../footer_logo_weiß.png';
 import logoHomeButton from '../../house-chimney-solid.svg'
-import { WelcomeComponent } from "../welcomeComponent/welcomeComponent";
-import { FooterComponent } from "../footerComponent/footerComponent";
+import { WelcomeComponent } from'../welcomeComponent/welcomeComponent';
+import { FooterComponent } from '../footerComponent/footerComponent';
+import { ListComponent } from '../listComponent/listComponent'
 import "./startPageComponent.css"
 
 export const StartPageComponent = () => {
@@ -25,6 +26,7 @@ export const StartPageComponent = () => {
             <img className="homeButton" src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
         </div>
         <p>Hier kommt die Liste hin</p>
+        <ListComponent  list={["Hund füttern", "tes1"]}  />
         <FooterComponent src={footer_logo} alt={"DHBW Logo"}/>
     </>;
 
