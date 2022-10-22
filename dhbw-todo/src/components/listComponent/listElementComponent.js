@@ -72,10 +72,6 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
     deletefunction()
    }
 
-   function getInfos() {
-    console.log("Name der Todo: "+allValues.isTodo)
-    console.log("Name des Keys: " + keyValue)
-   }
 
    // checkbox HTML Elmenet
     let checkboxHtmlElement =  <input type="checkbox" className="checkboxToDo" name="checkboxToDo" onChange={checkBoxChanged}/>
@@ -99,7 +95,6 @@ export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
                 <div className="buttonWrapperToDo">
                     <button className="editButton" onClick={toogleEditmode}>Bearbeiten</button>
                     <button className="deleteButton" onClick={onDelete}>Löschen</button>
-                    <button className="deleteButton" onClick={getInfos}>getInfos</button>
                 </div>
             </div>
         </li>
