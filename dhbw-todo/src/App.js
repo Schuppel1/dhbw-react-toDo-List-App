@@ -1,6 +1,7 @@
 import './App.css';
 import {StartPageComponent} from './components/startPageComponent/startPageComponent'
 
+
 function App() {
 
   return (
