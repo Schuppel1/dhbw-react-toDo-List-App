@@ -1,65 +1,63 @@
-import React from "react";
+import React, {useState} from "react";
 import "./listComponent.css";
 import { ListElementComponent } from "./listElementComponent";
 
 //Es wird ein Array übergeben mit der Liste
 export const ListComponent = ({list}) => {
 
+    const [isList, setList] = useState(list)
 
-    // der Inhalt der Liste
+
+    // der Inhalt der Liste als HTML Elmente
     let listItems = <p>
-        es ist noch keine Liste vorhanden
+        Es sind noch keine ToDos vorhanden!
     </p>
 
     let keycount = 0;
-    //<li key={keycount++}></li>
-    if(list) {
-        listItems = list.map((item) => 
-        <ListElementComponent todo={item} editmode={false} key={keycount++}></ListElementComponent>
-         );
+    if(isList) {
+        listItems = isList.map((item) => 
+            <ListElementComponent todo={item} editmode={false} keyValue={keycount++} deletefunction={deletListItem}/>
+        );
     }
 
-
-
     // löscht ein einzelnes Element der ToDo Liste
-    function deletListItem(item) {
-        
+    function deletListItem(itemContent) {
+        console.log(isList)
+        const arrayIndex = (isList.indexOf(itemContent));
+        console.log("ArrayIndex")
+        console.log(arrayIndex)
+        setList(isList.splice(arrayIndex,1))
+        console.log(isList)
+
     }
 
     // Löscht die ganze Liste
     function clearList() {
-
-    }
-
-    // makiert ein Element als abgeschlossen
-    function markAsDone(item) {
-
+        listItems = <p>
+            Es ist noch keine Liste vorhanden
+        </p>
+        setList()
     }
 
     // Fügt ein Element der Liste hinzu
-    function addListItem() {
-
+    function addListItem(e) {
+        let a =document.getElementById("inputToDo")
+        if(!isList) {
+            setList([a.value])
+        } else {
+            setList(isList.concat([a.value]))
+        }
+        
+        a.value=""
     }
 
-    // Editiert ein List Item
-    function editListItem(e) {
-
-    }
-
-    // diese Funktion hört darauf ob im Inputfeld "Aufgabe Hinzufügen" etwas eingegeben wird. 
-    function keyListener(e) {
-
-    }
-
-
-    if (listItems) {
-        console.log(listItems)
-    }
-
-    return ( <div className="listToDo"> 
+    console.log(isList)
+    return ( 
+    <div className="listToDo"> 
 
         <div className='inputToDo'>
-              <input type="text" name="inputToDo" id="inputToDo" placeholder="To-Do hinzufügen.." onKeyPress={keyListener} />
+              <input type="text" name="inputToDo" id="inputToDo" placeholder="To-Do hinzufügen.." />
+              <button className="addButton" onClick={addListItem}>Hinzufügen</button>
         </div>
 
         <div className="listItemsToDo">

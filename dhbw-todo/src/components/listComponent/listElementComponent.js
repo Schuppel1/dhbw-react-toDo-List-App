@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./listComponent.css";
 
 // Ein Einzelnes Listen Element
-export const ListElementComponent = ({todo,deletefunction,key}) => {
+export const ListElementComponent = ({todo,deletefunction,keyValue}) => {
 
 
     // Schaut ob sich der Status verändert hat. 
@@ -56,6 +56,15 @@ export const ListElementComponent = ({todo,deletefunction,key}) => {
         }
    }
 
+   function onDelete() {
+    deletefunction(allValues.isTodo)
+   }
+
+   function getInfos() {
+    console.log("Name der Todo: "+allValues.isTodo)
+    console.log("Name des Keys: " + keyValue)
+   }
+
    // checkbox HTML Elmenet
     let checkboxHtmlElement =  <input type="checkbox" className="checkboxToDo" name="checkboxToDo" onChange={checkBoxChanged}/>
 
@@ -65,14 +74,15 @@ export const ListElementComponent = ({todo,deletefunction,key}) => {
     
     // Return HTML String
     let returnHTML =     <>
-        <li key={key}>
+        <li key={keyValue}>
             <div className="container">
                 <label>{allValues.isTodo}</label>
                 {checkboxHtmlElement}
 
                 <div className="buttonWrapperToDo">
                     <button className="editButton" onClick={toogleEditmode}>Bearbeiten</button>
-                    <button className="deleteButton" onClick={deletefunction}>Löschen</button>
+                    <button className="deleteButton" onClick={onDelete}>Löschen</button>
+                    <button className="deleteButton" onClick={getInfos}>getInfos</button>
                 </div>
             </div>
         </li>
@@ -81,7 +91,7 @@ export const ListElementComponent = ({todo,deletefunction,key}) => {
     // Return HTML String im Edit Modus
     if(allValues.isEditMode) {
         returnHTML = 
-            <li key={key}>
+            <li key={keyValue}>
             <div className="container">
                 <input type="text" name="Editname" value={allValues.isTodo}  onChange={handleChange}/>
                 {checkboxHtmlElement}

@@ -7,7 +7,6 @@ import logoHomeButton from '../../house-chimney-solid.svg'
 import { WelcomeComponent } from'../welcomeComponent/welcomeComponent';
 import { FooterComponent } from '../footerComponent/footerComponent';
 import { ListComponent } from '../listComponent/listComponent'
-import { ListElementComponent } from "../listComponent/listElementComponent";
 
 import "./startPageComponent.css"
 
@@ -29,14 +28,12 @@ export const StartPageComponent = () => {
         <div className="listWrapper">
             <img className="homeButton" src={logoHomeButton} alt={"Home Button"} onClick={toggleScreen}></img>
         </div>
-        <ListComponent  list={["Hund füttern", "tes1"]}  />
+        <ListComponent  list={["Hund füttern", "test1", "test2"]}  />
         <FooterComponent src={footer_logo} alt={"DHBW Logo"}/>
     </>;
 
     function toggleScreen () {
         setVisibility(!isWelcomeActive);
-        console.log("predded")
-        console.log(isWelcomeActive)
 
     };
 
