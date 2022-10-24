@@ -1,5 +1,5 @@
 import './App.css';
-import {StartPageComponent} from './components/startPageComponent/startPageComponent'
+import {StartPageComponent} from './components/StartPageComponent/startPageComponent'
 
 
 function App() {
